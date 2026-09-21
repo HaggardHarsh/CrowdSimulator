@@ -11,7 +11,7 @@ pinned: false
 
 A simulation-based **OpenEnv** environment for training AI agents to learn and optimize crowd management strategies in high-density public spaces. The environment models a 6-zone stadium where an agent must prevent stampede situations by managing crowd flow, controlling access points, and issuing alerts.
 
-## 🏗 Architecture
+## Architecture
 
 ```
 crowd_management_env/
@@ -34,7 +34,7 @@ crowd_management_env/
 └── requirements.txt
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -51,7 +51,7 @@ python run_viz.py
 # Open http://localhost:8080 in your browser
 ```
 
-## 📦 Deployment (Hugging Face Spaces)
+## Deployment (Hugging Face Spaces)
 
 This environment is fully configured for OpenEnv Hugging Face Space deployments.
 ```bash
@@ -60,7 +60,7 @@ docker run -p 7860:7860 crowd-env
 ```
 The FastAPI instance will serve standard `/reset`, `/step` endpoints on `http://localhost:7860`.
 
-## 📡 OpenEnv API
+## OpenEnv API
 
 ```python
 from crowd_env import CrowdManagementEnv, Action
@@ -89,7 +89,7 @@ grade = env.grade()
 print(f"Score: {grade.score:.1f} ({grade.letter_grade})")
 ```
 
-## 🎯 Action Space
+## Action Space
 
 | Action | Description | Parameters |
 |--------|-------------|------------|
@@ -107,7 +107,7 @@ Action.issue_alert("D")
 Action.noop()
 ```
 
-## 🏟 Venue Layout
+## Venue Layout
 
 6 interconnected zones modeling a stadium:
 
@@ -133,7 +133,7 @@ Action.noop()
   └────────┘  └────────┘
 ```
 
-## 📊 Risk Levels
+## Risk Levels
 
 Based on real crowd safety research (people per m²):
 
@@ -152,7 +152,7 @@ Based on real crowd safety research (people per m²):
 | Medium | Derby Day Rush | 200 | 30/step | 2 | 75% |
 | Hard | Championship Final | 300 | 50/step | 5 | 50% |
 
-## 📈 Grading
+## Grading
 
 Deterministic scoring on 0.0–1.0 scale:
 
@@ -165,7 +165,7 @@ Deterministic scoring on 0.0–1.0 scale:
 
 **Letter grades:** A (≥0.9), B (≥0.75), C (≥0.6), D (≥0.4), F (<0.4)
 
-## 🖥 Visualization
+## Visualization
 
 Launch `python run_viz.py` and open the browser to see:
 - Interactive zone map with density heatmap
